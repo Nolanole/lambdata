@@ -18,13 +18,13 @@ def check_nulls(X):
   Checks a pandas dataframe for nulls, prints a report stating how many null
   observations per feature (only of features that contain nulls)
   '''
-  count = 0
+  nulls = False
   for col in X.columns:
     col_nulls = X[col].isna().sum()
     if col_nulls != 0:
-      count += 1
+      nulls = True
       print('The ' + str(col) + ' feature has ' + str(col_nulls) + ' null observations')
     else: 
       continue
-  if count == 0:
+  if nulls:
     print('The dataframe does not contain any null observations')
