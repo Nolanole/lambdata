@@ -26,5 +26,5 @@ def check_nulls(X):
       print('The ' + str(col) + ' feature has ' + str(col_nulls) + ' null observations')
     else: 
       continue
-  if nulls:
+  if not nulls:
     print('The dataframe does not contain any null observations')
