@@ -1,5 +1,3 @@
-import pandas as pd 
-
 def date_split(X, date_cols):
   '''
   Function to split a date feature in pandas dataframe and create 3 new features,
