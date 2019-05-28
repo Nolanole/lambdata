@@ -26,3 +26,5 @@ def check_nulls(X):
       continue
   if not nulls:
     print('The dataframe does not contain any null observations')
+
+#test
