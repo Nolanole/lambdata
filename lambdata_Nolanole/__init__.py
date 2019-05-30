@@ -7,6 +7,7 @@ import pandas as pd
 import numpy as np
 from . import example_module
 from . import helper_functions
+from . import helper_functions_unittest.py
 
 Y = example_module.increment(example_module.x)
 TEST = pd.DataFrame(np.ones(10))
