@@ -1,15 +1,19 @@
-def date_split(X, date_cols):
+def date_split(X, date_cols, keep_date_cols=True):
   '''
   Function to split a date feature in pandas dataframe and create 3 new features,
   day, month, and year
   '''
+  import pandas as pd
   X = X.copy() 
   for col in date_cols:
     X[col] = pd.to_datetime(X[col], infer_datetime_format=True)
     X[col + '_year'] = X[col].dt.year
     X[col + '_month'] = X[col].dt.month
     X[col + '_day'] = X[col].dt.day
-  return X
+  if keep_date_cols:
+    return X
+  else:
+    return X.drop(columns=date_cols)
 
 def check_nulls(X):
   '''
@@ -27,4 +31,4 @@ def check_nulls(X):
   if not nulls:
     print('The dataframe does not contain any null observations')
 
-#test
+
